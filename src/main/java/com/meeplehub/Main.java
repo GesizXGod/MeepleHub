@@ -1,8 +1,6 @@
 package com.meeplehub;
 
-import com.meeplehub.model.Customer;
-import com.meeplehub.model.Game;
-import com.meeplehub.model.GameCopy;
+import com.meeplehub.model.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,5 +34,10 @@ public class Main {
         customers.add(a);
         customers.add(b);
         System.out.println(customers.size());            // 1
+
+        Rental r1 = new DailyRental(1, a, copy1, 10, 3, 5);
+                Rental r2 = new HourlyRental(2, a, copy1, 10, 2, 12);
+        System.out.println(r1.calculatePrice());
+        System.out.println(r2.calculatePrice());
     }
 }

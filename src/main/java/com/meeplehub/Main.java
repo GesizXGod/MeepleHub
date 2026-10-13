@@ -36,7 +36,7 @@ public class Main {
         System.out.println(customers.size());            // 1
 
         Rental r1 = new DailyRental(1, a, copy1, 10, 3, 5);
-                Rental r2 = new HourlyRental(2, a, copy1, 10, 2, 12);
+        Rental r2 = new HourlyRental(2, a, copy1, 10, 2, 12);
         System.out.println(r1.calculatePrice());
         System.out.println(r2.calculatePrice());
     }

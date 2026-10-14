@@ -1,6 +1,7 @@
 package com.meeplehub;
 
 import com.meeplehub.model.*;
+import com.meeplehub.repository.Repository;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,5 +40,13 @@ public class Main {
         Rental r2 = new HourlyRental(2, a, copy1, 10, 2, 12);
         System.out.println(r1.calculatePrice());
         System.out.println(r2.calculatePrice());
+
+        Repository<Game> games = new Repository<>();
+        games.save(game);
+        games.save(new Game(2, "Carcassonne", 2, 5));
+        System.out.println(games.findById(2).getTitle());
+        System.out.println(games.findById(3));
+        System.out.println(games.count());
+
     }
 }

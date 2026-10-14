@@ -1,6 +1,6 @@
 package com.meeplehub.model;
 
-public class GameCopy {
+public class GameCopy implements HasId {
     private final long id;
     private final Game game;
     private CopyStatus status;
@@ -11,9 +11,18 @@ public class GameCopy {
         this.status = CopyStatus.AVAILABLE;
     }
 
-    public long getId() { return id; }
-    public Game getGame() { return game; }
-    public CopyStatus getStatus() { return status; }
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public CopyStatus getStatus() {
+        return status;
+    }
 
     public boolean isAvailable() {
         return status == CopyStatus.AVAILABLE;

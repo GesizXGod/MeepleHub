@@ -3,7 +3,7 @@ package com.meeplehub.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Game {
+public class Game implements HasId {
     private final long id;
     private String title;
     private int minPlayers;
@@ -26,10 +26,28 @@ public class Game {
         return genres.contains(genre);
     }
 
-    public long getId() { return id; }
-    public String getTitle() { return title; }
-    public int getMinPlayers() { return minPlayers; }
-    public int getMaxPlayers() { return maxPlayers; }
-    public Set<String> getGenres() { return genres; }
-    public Set<String> getTags() { return tags; }
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getMinPlayers() {
+        return minPlayers;
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
+    }
+
+    public Set<String> getGenres() {
+        return genres;
+    }
+
+    public Set<String> getTags() {
+        return tags;
+    }
 }

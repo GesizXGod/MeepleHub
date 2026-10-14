@@ -2,7 +2,7 @@ package com.meeplehub.model;
 
 import java.util.Objects;
 
-public class Customer {
+public class Customer implements HasId {
     private final long id;
     private String name;
     private boolean vip;
@@ -13,9 +13,18 @@ public class Customer {
         this.vip = vip;
     }
 
-    public long getId() { return id; }
-    public String getName() { return name; }
-    public boolean isVip() { return vip; }
+    @Override
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
 
     @Override
     public boolean equals(Object o) {

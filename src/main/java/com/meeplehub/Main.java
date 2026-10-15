@@ -60,16 +60,6 @@ public class Main {
         System.out.println(bad.isSuccess());
         System.out.println(bad.getError());
 
-        Queue<Customer> waitlist = new PriorityQueue<>(
-                (c1, c2) -> Boolean.compare(c2.isVip(), c1.isVip()));
-        waitlist.offer(new Customer(1, "Anna", false));
-        waitlist.offer(new Customer(2, "Bob", true));
-        waitlist.offer(new Customer(3, "Carl", false));
-        System.out.println(waitlist.poll().getName());
-        System.out.println(waitlist.poll().getName());
-        System.out.println(waitlist.poll().getName());
-
-
 
     }
 }

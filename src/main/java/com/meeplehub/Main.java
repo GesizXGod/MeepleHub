@@ -48,5 +48,11 @@ public class Main {
         System.out.println(games.findById(3));
         System.out.println(games.count());
 
+        Result<Game> ok = Result.success(game);
+        Result<Game> bad = Result.failure("Game not found");
+        System.out.println(ok.isSuccess());
+        System.out.println(ok.getValue().getTitle());
+        System.out.println(bad.isSuccess());
+        System.out.println(bad.getError());
     }
 }

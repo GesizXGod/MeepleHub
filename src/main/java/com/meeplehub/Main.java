@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Queue;
 import java.util.ArrayDeque;
+import java.util.PriorityQueue;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -58,14 +60,15 @@ public class Main {
         System.out.println(bad.isSuccess());
         System.out.println(bad.getError());
 
-        Queue<Customer> waitlist = new ArrayDeque<>();
+        Queue<Customer> waitlist = new PriorityQueue<>(
+                (c1, c2) -> Boolean.compare(c2.isVip(), c1.isVip()));
         waitlist.offer(new Customer(1, "Anna", false));
         waitlist.offer(new Customer(2, "Bob", true));
         waitlist.offer(new Customer(3, "Carl", false));
-        System.out.println(waitlist.peek().getName());
         System.out.println(waitlist.poll().getName());
         System.out.println(waitlist.poll().getName());
-        System.out.println(waitlist.size());
+        System.out.println(waitlist.poll().getName());
+
 
 
     }

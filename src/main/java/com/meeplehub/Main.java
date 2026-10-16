@@ -2,6 +2,7 @@ package com.meeplehub;
 
 import com.meeplehub.model.*;
 import com.meeplehub.repository.Repository;
+import com.meeplehub.service.WaitList;
 
 import java.util.ArrayDeque;
 import java.util.HashSet;
@@ -60,6 +61,14 @@ public class Main {
         System.out.println(bad.isSuccess());
         System.out.println(bad.getError());
 
-
+        WaitList waitlist = new WaitList();
+        waitlist.join(new Customer(1, "Anna", false));
+        waitlist.join(new Customer(2, "Bob", true));
+        waitlist.join(new Customer(3, "Carl", false));
+        waitlist.join(new Customer(4, "Dina", true));
+        System.out.println(waitlist.next().getName());
+        System.out.println(waitlist.next().getName());
+        System.out.println(waitlist.next().getName());
+        System.out.println(waitlist.next().getName());
     }
 }

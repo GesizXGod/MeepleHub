@@ -1,6 +1,5 @@
-package com.meeplehub;
+package com.meeplehub.model;
 
-import com.meeplehub.model.*;
 import com.meeplehub.repository.Repository;
 import com.meeplehub.service.WaitList;
 

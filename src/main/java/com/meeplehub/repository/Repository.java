@@ -25,5 +25,7 @@ public class Repository<T extends HasId> {
         return items.size();
     }
 
-
+    public void delete(long id){
+            items.remove(id);
+    }
 }

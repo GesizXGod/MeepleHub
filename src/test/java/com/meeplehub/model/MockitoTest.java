@@ -32,8 +32,8 @@ public class MockitoTest {
         when(repository.findById(1))
                     .thenReturn(customer);
         Customer result = customerService.findCustomer(1);
-        assertEquals("Jack", result.getName());
-        verify(repository, times(1)).findById(1);
+            assertEquals("Jack", result.getName());
+            verify(repository, times(1)).findById(1);
         }
         @Test
         void shouldSaveCustomerThroughService(){
@@ -43,6 +43,7 @@ public class MockitoTest {
          verify(repository).save(captor.capture());
          Customer captured = captor.getValue();
          assertEquals("Jack", captured.getName());
+
         }
     }
 

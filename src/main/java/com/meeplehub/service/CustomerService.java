@@ -9,10 +9,17 @@ public class CustomerService {
         this.repository = repository;
     }
     public Customer findCustomer(long id){
-        return repository.findById(id);
+        Customer customer = repository.findById(id);
+        if(customer == null)
+        {throw new RuntimeException("Customer not found");
+        }
+        return customer;
     }
     public void saveCustomer(Customer customer){
         repository.save(customer);
+    }
+    public void deleteCustomer(long id){
+        repository.delete(id);
     }
 
 }

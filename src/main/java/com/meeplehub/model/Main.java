@@ -1,7 +1,11 @@
 package com.meeplehub.model;
 
+import com.meeplehub.config.AppConfig;
 import com.meeplehub.repository.Repository;
+import com.meeplehub.service.CustomerService;
 import com.meeplehub.service.WaitList;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -65,5 +69,6 @@ public class Main {
         System.out.println(waitlist.next().getName());
         System.out.println(waitlist.next().getName());
         System.out.println(waitlist.next().getName());
+
     }
 }

@@ -13,7 +13,11 @@ public class SpringMain {
         customerService.saveCustomer(customer);
         Customer foundCustomer = customerService.findCustomer(1);
         System.out.println(foundCustomer.getName());
+        customerService.generateReport();
+        customerService.generateReport();
+        customerService.generateReport();
        }
+
 
 
     }
